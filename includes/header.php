@@ -161,10 +161,8 @@ $current_page = $current_page ?? 'inicio';
             <div class="flex items-center justify-between h-20">
                 
                 <!-- Logo -->
-                <a href="index.php" class="flex items-center space-x-2 group">
-                    <div class="w-10 h-10 bg-gradient-to-br from-praxis-gold to-praxis-gold-dark rounded-lg flex items-center justify-center">
-                        <i class="fas fa-shield-halved text-praxis-black text-lg"></i>
-                    </div>
+                <a href="index.php" class="flex items-center space-x-3 group">
+                    <img src="images/logo.png" alt="Praxis Seguridad Logo" class="h-12 w-auto" style="mix-blend-mode: screen;">
                     <div>
                         <span class="text-xl font-heading font-bold text-praxis-white group-hover:text-praxis-gold transition-colors">PRAXIS</span>
                         <span class="text-xl font-heading font-bold gradient-text"> SEGURIDAD</span>
