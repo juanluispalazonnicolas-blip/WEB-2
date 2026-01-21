@@ -1,0 +1,85 @@
+# =====================================================
+# Praxis Seguridad - Configuración Apache
+# =====================================================
+
+# Activar motor de reescritura
+RewriteEngine On
+
+# Forzar HTTPS (descomentar en producción)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Eliminar .php de las URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Páginas de error personalizadas
+ErrorDocument 404 /index.php
+ErrorDocument 500 /index.php
+
+# =====================================================
+# Cabeceras de seguridad
+# =====================================================
+<IfModule mod_headers.c>
+    # Prevenir clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Prevenir MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Activar protección XSS
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# =====================================================
+# Compresión GZIP
+# =====================================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# =====================================================
+# Caché del navegador
+# =====================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Imágenes - 1 mes
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    
+    # CSS y JS - 1 semana
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    
+    # HTML - sin caché
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# =====================================================
+# Proteger archivos sensibles
+# =====================================================
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger directorio includes
+<IfModule mod_rewrite.c>
+    RewriteRule ^includes/ - [F,L]
+</IfModule>
+
+# =====================================================
+# Charset UTF-8
+# =====================================================
+AddDefaultCharset UTF-8
