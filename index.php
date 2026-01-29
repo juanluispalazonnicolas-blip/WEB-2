@@ -352,9 +352,9 @@ include 'includes/header.php';
             <a href="contacto.php" class="btn-gold px-10 py-5 rounded-lg text-praxis-black font-heading font-bold uppercase tracking-wider">
                 Solicitar Consultoría
             </a>
-            <a href="tel:+34600000000" class="flex items-center text-praxis-gray-light hover:text-praxis-gold transition-colors">
+            <a href="tel:+34637474428" class="flex items-center text-praxis-gray-light hover:text-praxis-gold transition-colors">
                 <i class="fas fa-phone mr-3 text-praxis-gold"></i>
-                <span class="font-medium">+34 600 000 000</span>
+                <span class="font-medium">+34 637 474 428</span>
             </a>
         </div>
     </div>

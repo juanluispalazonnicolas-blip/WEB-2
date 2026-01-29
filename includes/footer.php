@@ -33,6 +33,9 @@
                         <a href="#" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all">
                             <i class="fab fa-twitter"></i>
                         </a>
+                        <a href="https://t.me/Praxis_bot" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-[#0088cc] hover:text-white transition-all" title="Asistente virtual en Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -99,15 +102,19 @@
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fas fa-phone text-praxis-gold"></i>
-                            <a href="tel:+34600000000" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">+34 600 000 000</a>
+                            <a href="tel:+34637474428" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">+34 637 474 428</a>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fab fa-whatsapp text-praxis-gold"></i>
-                            <a href="https://wa.me/34600000000" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">WhatsApp</a>
+                            <a href="https://wa.me/34637474428" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">WhatsApp</a>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fas fa-envelope text-praxis-gold"></i>
                             <a href="mailto:info@praxisseguridad.es" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">info@praxisseguridad.es</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fab fa-telegram-plane text-praxis-gold"></i>
+                            <a href="https://t.me/Praxis_bot" target="_blank" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Asistente Telegram</a>
                         </li>
                     </ul>
                 </div>
@@ -131,6 +138,9 @@
     
     <!-- Questionnaire Modal -->
     <?php include dirname(__FILE__) . '/questionnaire.php'; ?>
+    
+    <!-- Chatbot Widget (replaces Telegram) -->
+    <?php include dirname(__FILE__) . '/chatbot.php'; ?>
     
     <!-- Scroll to top button -->
     <button onclick="scrollToTop()" id="scrollTop" class="fixed bottom-8 right-8 w-12 h-12 bg-praxis-gold rounded-lg text-praxis-black flex items-center justify-center opacity-0 invisible transition-all hover:scale-110 z-50">
