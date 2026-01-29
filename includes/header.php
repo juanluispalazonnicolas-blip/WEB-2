@@ -162,7 +162,7 @@ $current_page = $current_page ?? 'inicio';
                 
                 <!-- Logo -->
                 <a href="index.php" class="flex items-center space-x-3 group">
-                    <img src="images/logo.png" alt="Praxis Seguridad Logo" class="h-12 w-auto" style="mix-blend-mode: screen;">
+                    <img src="images/logo.png" alt="Praxis Seguridad Logo" class="h-12 w-auto">
                     <div>
                         <span class="text-xl font-heading font-bold text-praxis-white group-hover:text-praxis-gold transition-colors">PRAXIS</span>
                         <span class="text-xl font-heading font-bold gradient-text"> SEGURIDAD</span>
