@@ -248,6 +248,83 @@ function hideTyping() {
     if (typing) typing.remove();
 }
 
+// Respuestas del chatbot (sin necesidad de backend)
+const chatResponses = {
+    servicios: {
+        keywords: ['servicio', 'servicios', 'ofrecen', 'hacen', 'ofrece', 'realizan'],
+        answer: 'Ofrecemos consultoría estratégica, auditoría de riesgos, diseño de sistemas de seguridad (CCTV, alarmas, control de accesos), servicios de vigilancia y tecnología e IA. ¿Te interesa alguno en particular?'
+    },
+    precio: {
+        keywords: ['precio', 'precios', 'coste', 'cuesta', 'presupuesto', 'tarifa', 'cuanto', 'cuánto'],
+        answer: 'Cada proyecto es personalizado según tus necesidades. Solicita una consultoría gratuita y te haremos un presupuesto sin compromiso. ¿Quieres que te contactemos?'
+    },
+    contacto: {
+        keywords: ['contacto', 'teléfono', 'telefono', 'llamar', 'whatsapp', 'email', 'correo', 'hablar'],
+        answer: 'Puedes contactarnos de varias formas:<br>📞 Teléfono: +34 637 474 428<br>💬 WhatsApp: wa.me/34637474428<br>✉️ Email: info@praxisseguridad.es'
+    },
+    horario: {
+        keywords: ['horario', 'hora', 'horas', 'abierto', 'disponible', 'atencion', 'atención', 'cuando', 'cuándo'],
+        answer: 'Nuestro horario es de lunes a viernes de 09:00 a 18:00. Para urgencias, tenemos disponibilidad 24/7.'
+    },
+    ubicacion: {
+        keywords: ['ubicación', 'ubicacion', 'donde', 'dónde', 'murcia', 'santomera', 'direccion', 'dirección', 'zona'],
+        answer: 'Estamos ubicados en Santomera, Región de Murcia, España. Damos servicio en toda la región de Murcia y alrededores.'
+    },
+    camaras: {
+        keywords: ['cámara', 'camara', 'cámaras', 'camaras', 'cctv', 'video', 'vídeo', 'grabar', 'grabación'],
+        answer: 'Sí, diseñamos e instalamos sistemas CCTV profesionales. No vendemos productos genéricos: analizamos tus necesidades y diseñamos la solución óptima. ¿Quieres una consultoría gratuita?'
+    },
+    alarma: {
+        keywords: ['alarma', 'alarmas', 'intrusión', 'intrusion', 'robo', 'ladrón', 'ladron', 'detector', 'detectores'],
+        answer: 'Diseñamos sistemas de detección de intrusión conectados a CRA (Central Receptora de Alarmas). Pensamos antes de instalar para darte la mejor protección.'
+    },
+    accesos: {
+        keywords: ['acceso', 'accesos', 'entrada', 'puerta', 'biométrico', 'biometrico', 'tarjeta', 'llave', 'control'],
+        answer: 'Implementamos sistemas de control de accesos: tarjetas, códigos, biométricos... Todo diseñado según las necesidades específicas de tu instalación.'
+    },
+    consultoria: {
+        keywords: ['consultoría', 'consultoria', 'asesor', 'asesoramiento', 'análisis', 'analisis', 'auditoría', 'auditoria', 'evaluar'],
+        answer: 'Nuestra consultoría estratégica analiza tu situación actual y diseña el modelo de seguridad óptimo. No vendemos, asesoramos. ¿Agendamos una reunión sin compromiso?'
+    },
+    saludo: {
+        keywords: ['hola', 'buenas', 'buenos', 'hey', 'saludos', 'qué tal', 'que tal', 'hi', 'hello'],
+        answer: '¡Hola! 👋 Soy el asistente virtual de Praxis Seguridad. ¿En qué puedo ayudarte? Puedo informarte sobre nuestros servicios, precios, horarios o cómo contactarnos.'
+    },
+    gracias: {
+        keywords: ['gracias', 'vale', 'ok', 'perfecto', 'genial', 'estupendo', 'entendido', 'claro'],
+        answer: '¡De nada! Si tienes más preguntas, aquí estoy. También puedes llamarnos al +34 637 474 428 o solicitar una consultoría gratuita.'
+    },
+    vigilancia: {
+        keywords: ['vigilancia', 'vigilante', 'guardia', 'guardias', 'seguridad', 'vigilar', 'ronda', 'rondas'],
+        answer: 'Sí, ofrecemos estructuración y coordinación profesional de servicios de vigilancia, acudas y servicios auxiliares. Diseñamos el modelo que mejor se adapte a tu necesidad.'
+    },
+    tecnologia: {
+        keywords: ['tecnología', 'tecnologia', 'ia', 'inteligencia', 'artificial', 'automatización', 'automatizacion', 'digital'],
+        answer: 'Sí, integramos automatización, control y eficiencia operativa usando herramientas digitales avanzadas e inteligencia artificial para optimizar la seguridad.'
+    }
+};
+
+function findResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    let bestMatch = null;
+    let maxMatches = 0;
+    
+    for (const key in chatResponses) {
+        let matches = 0;
+        for (const keyword of chatResponses[key].keywords) {
+            if (lowerMessage.includes(keyword.toLowerCase())) {
+                matches++;
+            }
+        }
+        if (matches > maxMatches) {
+            maxMatches = matches;
+            bestMatch = chatResponses[key].answer;
+        }
+    }
+    
+    return bestMatch || 'No tengo información específica sobre eso, pero estaré encantado de ayudarte.<br><br>📞 Llámanos: +34 637 474 428<br>💬 WhatsApp: wa.me/34637474428<br>📝 O rellena el cuestionario de valoración<br><br>¿Hay algo más en lo que pueda ayudarte?';
+}
+
 async function sendMessage(message) {
     if (!message.trim()) return;
     
@@ -256,25 +333,12 @@ async function sendMessage(message) {
     
     showTyping();
     
-    try {
-        const response = await fetch('api/chatbot.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: message })
-        });
-        
-        const data = await response.json();
-        hideTyping();
-        
-        if (data.success && data.response) {
-            addMessage(data.response, true);
-        } else {
-            addMessage('Lo siento, ha ocurrido un error. Por favor, inténtalo de nuevo o llámanos al +34 637 474 428.', true);
-        }
-    } catch (error) {
-        hideTyping();
-        addMessage('Error de conexión. Puedes contactarnos directamente al +34 637 474 428.', true);
-    }
+    // Simular delay de respuesta (más natural)
+    await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 500));
+    
+    hideTyping();
+    const response = findResponse(message);
+    addMessage(response, true);
 }
 
 function sendQuickMessage(message) {
