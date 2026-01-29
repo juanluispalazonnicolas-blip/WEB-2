@@ -30,6 +30,9 @@
                         <a href="https://www.instagram.com/juanlupalazon/" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
+                        <a href="https://x.com/JuanluTropez" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all" title="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
                         <a href="https://t.me/Praxis_bot" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-[#0088cc] hover:text-white transition-all" title="Asistente virtual en Telegram">
                             <i class="fab fa-telegram-plane"></i>
                         </a>
