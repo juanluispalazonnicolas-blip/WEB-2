@@ -24,14 +24,11 @@
                     </p>
                     <!-- Social Icons -->
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all">
+                        <a href="https://www.linkedin.com/in/juan-luis-palaz%C3%B3n-nicol%C3%A1s-1385581b2/" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all">
+                        <a href="https://www.instagram.com/juanlupalazon/" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all" title="Instagram">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-praxis-gold hover:text-praxis-black transition-all">
-                            <i class="fab fa-twitter"></i>
                         </a>
                         <a href="https://t.me/Praxis_bot" target="_blank" class="w-10 h-10 rounded-lg bg-praxis-gray/50 flex items-center justify-center text-praxis-gray-light hover:bg-[#0088cc] hover:text-white transition-all" title="Asistente virtual en Telegram">
                             <i class="fab fa-telegram-plane"></i>
