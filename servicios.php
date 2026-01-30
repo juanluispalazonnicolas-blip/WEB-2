@@ -82,6 +82,24 @@ include 'includes/header.php';
                 'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'
             ],
             [
+                'id' => 'peritaje',
+                'icon' => 'fa-gavel',
+                'title' => 'Peritaje Judicial en Seguridad Privada',
+                'badge' => 'Especializado',
+                'badge_color' => 'bg-amber-600 text-white',
+                'short' => 'Informes periciales para procedimientos judiciales',
+                'description' => 'Elaboramos dictámenes e informes periciales técnicos para procedimientos judiciales en materias de seguridad privada. Actuamos como peritos de parte o designados judicialmente, aportando criterio técnico especializado a jueces, abogados y fiscales.',
+                'features' => [
+                    'Informes periciales técnicos para juicios',
+                    'Auditorías forenses en seguridad privada',
+                    'Dictámenes sobre instalaciones y sistemas',
+                    'Actuación como perito en vistas judiciales',
+                    'Contraperitajes y segundas opiniones técnicas',
+                    'Asesoramiento técnico a letrados'
+                ],
+                'image' => 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80'
+            ],
+            [
                 'id' => 'sistemas',
                 'icon' => 'fa-sitemap',
                 'title' => 'Diseño de Sistemas de Seguridad',
@@ -131,6 +149,24 @@ include 'includes/header.php';
                     'Reducción de incidencias y errores humanos'
                 ],
                 'image' => 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80'
+            ],
+            [
+                'id' => 'dpo',
+                'icon' => 'fa-shield-halved',
+                'title' => 'Delegado de Protección de Datos (DPO)',
+                'badge' => 'Cumplimiento',
+                'badge_color' => 'bg-green-600 text-white',
+                'short' => 'Asesoramiento integral en privacidad y RGPD',
+                'description' => 'Ofrecemos el servicio de Delegado de Protección de Datos externo para empresas que requieren cumplir con el RGPD y la LOPDGDD. Realizamos auditorías de privacidad, análisis de riesgos, planes de adecuación y formación al personal.',
+                'features' => [
+                    'Servicio de DPO externo certificado',
+                    'Auditorías de cumplimiento RGPD/LOPDGDD',
+                    'Análisis de impacto en protección de datos (EIPD)',
+                    'Procedimientos de respuesta ante brechas de seguridad',
+                    'Gestión de derechos de los interesados',
+                    'Formación y concienciación en privacidad'
+                ],
+                'image' => 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80'
             ],
             [
                 'id' => 'tecnologia',
@@ -286,9 +322,9 @@ include 'includes/header.php';
                 <i class="fas fa-comments mr-2"></i>
                 Solicitar Consultoría
             </a>
-            <a href="tel:+34600000000" class="flex items-center text-praxis-gray-light hover:text-praxis-gold transition-colors">
+            <a href="tel:+34637474428" class="flex items-center text-praxis-gray-light hover:text-praxis-gold transition-colors">
                 <i class="fas fa-phone mr-3 text-praxis-gold"></i>
-                <span class="font-medium">+34 600 000 000</span>
+                <span class="font-medium">+34 637 474 428</span>
             </a>
         </div>
     </div>
