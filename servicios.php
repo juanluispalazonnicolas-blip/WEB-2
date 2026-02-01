@@ -69,7 +69,7 @@ include 'includes/header.php';
                     'Planificación estratégica a medio y largo plazo',
                     'Optimización de recursos y presupuestos'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'auditoria',
@@ -86,7 +86,7 @@ include 'includes/header.php';
                     'Detección de sobrecostes innecesarios',
                     'Informe ejecutivo con plan de acción'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/7163956/pexels-photo-7163956.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'peritaje',
@@ -104,7 +104,7 @@ include 'includes/header.php';
                     'Contraperitajes y segundas opiniones técnicas',
                     'Asesoramiento técnico a letrados'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/5668859/pexels-photo-5668859.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'sistemas',
@@ -121,7 +121,7 @@ include 'includes/header.php';
                     'Integración con Central Receptora de Alarmas',
                     'Arquitectura escalable y mantenible'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'optimizacion',
@@ -138,7 +138,7 @@ include 'includes/header.php';
                     'Mejora del rendimiento sin nuevas inversiones',
                     'Formación al personal en uso correcto'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'vigilancia',
@@ -155,7 +155,7 @@ include 'includes/header.php';
                     'Supervisión y control de calidad',
                     'Reducción de incidencias y errores humanos'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/8369517/pexels-photo-8369517.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'dpo',
@@ -173,7 +173,7 @@ include 'includes/header.php';
                     'Gestión de derechos de los interesados',
                     'Formación y concienciación en privacidad'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'id' => 'tecnologia',
@@ -190,7 +190,7 @@ include 'includes/header.php';
                     'Sistemas de monitorización avanzada',
                     'Dashboards de control en tiempo real'
                 ],
-                'image' => 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800'
             ]
         ];
         

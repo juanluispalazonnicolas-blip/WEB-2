@@ -95,7 +95,7 @@ include 'includes/header.php';
                 ],
                 'quote' => 'Pensábamos que estábamos bien protegidos porque gastábamos mucho. La auditoría nos demostró que estábamos tirando dinero en cosas que no servían.',
                 'quote_author' => 'Director de Operaciones',
-                'image' => 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'title' => 'Diseño de sistema para nave industrial',
@@ -113,7 +113,7 @@ include 'includes/header.php';
                 ],
                 'quote' => 'Sin el asesoramiento, habríamos contratado el más barato pensando que ahorrábamos. Habría sido un desastre.',
                 'quote_author' => 'Gerente de Operaciones',
-                'image' => 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'title' => 'Optimización para empresa de seguridad',
@@ -131,7 +131,7 @@ include 'includes/header.php';
                 ],
                 'quote' => 'Estábamos tan metidos en el día a día que no veíamos los problemas estructurales. La consultoría nos abrió los ojos.',
                 'quote_author' => 'Director General',
-                'image' => 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/8369517/pexels-photo-8369517.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'title' => 'Peritaje judicial en robo con fuerza',
@@ -149,7 +149,7 @@ include 'includes/header.php';
                 ],
                 'quote' => 'Sin el informe pericial, habría perdido el juicio y 80.000€. La inversión en el peritaje fue la mejor decisión.',
                 'quote_author' => 'Propietario del comercio',
-                'image' => 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/5668859/pexels-photo-5668859.jpeg?auto=compress&cs=tinysrgb&w=800'
             ],
             [
                 'title' => 'Implantación DPO para clínica médica',
@@ -167,7 +167,7 @@ include 'includes/header.php';
                 ],
                 'quote' => 'Pensábamos que el RGPD era solo poner un banner de cookies. Ahora entendemos que proteger los datos de nuestros pacientes es fundamental.',
                 'quote_author' => 'Directora Médica',
-                'image' => 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80'
+                'image' => 'https://images.pexels.com/photos/3259624/pexels-photo-3259624.jpeg?auto=compress&cs=tinysrgb&w=800'
             ]
         ];
         

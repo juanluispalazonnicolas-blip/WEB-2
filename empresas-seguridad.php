@@ -17,7 +17,7 @@ include 'includes/header.php';
 <section class="relative pt-32 pb-20 bg-praxis-black overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-full">
         <div class="absolute inset-0 bg-gradient-to-r from-praxis-black via-praxis-black/95 to-praxis-black/80"></div>
-        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80" 
+        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920" 
              alt="Equipo de seguridad profesional" 
              class="w-full h-full object-cover opacity-20">
     </div>
@@ -287,7 +287,7 @@ include 'includes/header.php';
             
             <div class="relative">
                 <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" 
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" 
                          alt="Consultoría empresarial" 
                          class="w-full h-full object-cover">
                 </div>

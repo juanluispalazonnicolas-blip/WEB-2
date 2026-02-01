@@ -80,6 +80,22 @@ ErrorDocument 500 /index.php
 </IfModule>
 
 # =====================================================
-# Charset UTF-8
+# Charset UTF-8 (FORZADO)
 # =====================================================
 AddDefaultCharset UTF-8
+
+# Forzar UTF-8 para archivos específicos
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .php
+    AddCharset UTF-8 .html
+    AddCharset UTF-8 .htm
+    AddCharset UTF-8 .css
+    AddCharset UTF-8 .js
+</IfModule>
+
+# Header adicional para PHP
+<IfModule mod_headers.c>
+    <FilesMatch "\.php$">
+        Header set Content-Type "text/html; charset=UTF-8"
+    </FilesMatch>
+</IfModule>

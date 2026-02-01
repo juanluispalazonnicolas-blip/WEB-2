@@ -1,5 +1,5 @@
 <!-- Chatbot Widget Praxis Seguridad -->
-<div id="praxis-chatbot" class="fixed bottom-8 right-8 z-50">
+<div id="praxis-chatbot" class="fixed bottom-28 right-8 z-50">
     
     <!-- Chat Button -->
     <button id="chatbot-toggle" class="w-16 h-16 bg-gradient-to-br from-praxis-gold to-praxis-gold-dark rounded-full shadow-xl flex items-center justify-center text-praxis-black hover:scale-110 transition-all group">

@@ -17,7 +17,7 @@ include 'includes/header.php';
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" 
+        <img src="https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=1920" 
              alt="Entorno empresarial corporativo" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-b from-praxis-black/80 via-praxis-black/70 to-praxis-black"></div>
@@ -194,7 +194,7 @@ include 'includes/header.php';
             <!-- Image -->
             <div class="relative">
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" 
+                    <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" 
                          alt="Oficina corporativa Praxis Seguridad" 
                          class="w-full h-full object-cover">
                 </div>
@@ -262,37 +262,37 @@ include 'includes/header.php';
                     'icon' => 'fa-chess-queen',
                     'title' => 'Consultoría Estratégica',
                     'desc' => 'Diseño de modelos de seguridad eficientes y escalables. Asesoramiento a dirección y responsables de operaciones.',
-                    'image' => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80'
+                    'image' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600'
                 ],
                 [
                     'icon' => 'fa-magnifying-glass-chart',
                     'title' => 'Auditoría de Riesgos',
                     'desc' => 'Detección de fallos, sobrecostes y carencias reales. Evaluación de instalaciones, procesos y personal.',
-                    'image' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80'
+                    'image' => 'https://images.pexels.com/photos/7163956/pexels-photo-7163956.jpeg?auto=compress&cs=tinysrgb&w=600'
                 ],
                 [
                     'icon' => 'fa-sitemap',
                     'title' => 'Diseño de Sistemas',
                     'desc' => 'Soluciones pensadas antes de ser instaladas. CCTV, intrusión, control de accesos, CRA.',
-                    'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80'
+                    'image' => 'https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=600'
                 ],
                 [
                     'icon' => 'fa-gears',
                     'title' => 'Optimización',
                     'desc' => 'Mejorar sin sustituir innecesariamente. Revisión de configuraciones, arquitectura y uso correcto.',
-                    'image' => 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'
+                    'image' => 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600'
                 ],
                 [
                     'icon' => 'fa-user-shield',
                     'title' => 'Servicios de Vigilancia',
                     'desc' => 'Estructuración y coordinación profesional. Vigilancia, acudas, servicios auxiliares.',
-                    'image' => 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80'
+                    'image' => 'https://images.pexels.com/photos/8369517/pexels-photo-8369517.jpeg?auto=compress&cs=tinysrgb&w=600'
                 ],
                 [
                     'icon' => 'fa-microchip',
                     'title' => 'Tecnología e IA',
                     'desc' => 'Automatización, control y eficiencia operativa. Integración de herramientas digitales avanzadas.',
-                    'image' => 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80'
+                    'image' => 'https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=600'
                 ]
             ];
             
@@ -374,7 +374,7 @@ include 'includes/header.php';
             <!-- Image -->
             <div class="relative">
                 <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80" 
+                    <img src="https://images.pexels.com/photos/8369520/pexels-photo-8369520.jpeg?auto=compress&cs=tinysrgb&w=800" 
                          alt="Equipo profesional Praxis Seguridad" 
                          class="w-full h-full object-cover">
                 </div>
@@ -392,7 +392,7 @@ include 'includes/header.php';
 <section class="relative py-24 overflow-hidden">
     <!-- Background -->
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=80" 
+        <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1920" 
              alt="Instalación protegida" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-r from-praxis-black via-praxis-black/90 to-praxis-black/80"></div>
@@ -434,12 +434,12 @@ include 'includes/header.php';
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <?php
             $gallery = [
-                'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80',
-                'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&q=80',
-                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
-                'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80',
-                'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80',
-                'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80'
+                'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/8369517/pexels-photo-8369517.jpeg?auto=compress&cs=tinysrgb&w=600'
             ];
             
             foreach ($gallery as $index => $image): ?>

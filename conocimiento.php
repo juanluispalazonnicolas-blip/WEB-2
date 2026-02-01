@@ -62,38 +62,42 @@ $categorias = [
     ]
 ];
 
-// Artículos destacados
+// Artículos destacados - IDs deben coincidir con los de articulo.php
 $articulos_destacados = [
     [
-        'titulo' => 'Guía completa RGPD para videovigilancia',
+        'id' => 'guia-rgpd-empresas',
+        'titulo' => 'Guía RGPD para empresas: todo lo que debes saber',
         'categoria' => 'Protección de Datos',
         'categoria_id' => 'rgpd',
-        'excerpt' => 'Todo lo que necesitas saber para cumplir con el RGPD al instalar cámaras de seguridad.',
-        'fecha' => '2024-01-15',
+        'excerpt' => 'Resumen completo del Reglamento General de Protección de Datos y sus obligaciones para empresas.',
+        'fecha' => '2024-01-20',
         'acceso' => 'public'
     ],
     [
+        'id' => 'elegir-sistema-alarma',
         'titulo' => 'Cómo elegir un sistema de alarma',
         'categoria' => 'Sistemas de Alarma',
         'categoria_id' => 'alarmas',
-        'excerpt' => 'Criterios para seleccionar el sistema más adecuado según tus necesidades.',
-        'fecha' => '2024-01-10',
+        'excerpt' => 'Criterios profesionales para seleccionar el sistema de alarma más adecuado según tus necesidades.',
+        'fecha' => '2024-01-18',
         'acceso' => 'public'
     ],
     [
+        'id' => 'configuracion-nvr-hikvision',
         'titulo' => 'Configuración inicial de NVR Hikvision',
         'categoria' => 'CCTV y Videovigilancia',
         'categoria_id' => 'cctv',
-        'excerpt' => 'Paso a paso para configurar tu grabador de red desde cero.',
-        'fecha' => '2024-01-05',
-        'acceso' => 'registered'
+        'excerpt' => 'Guía paso a paso para configurar tu grabador de red Hikvision desde cero.',
+        'fecha' => '2024-01-20',
+        'acceso' => 'public'
     ],
     [
+        'id' => 'detectores-pir-ubicacion',
         'titulo' => 'Detectores PIR: tipos y ubicación correcta',
         'categoria' => 'Sistemas de Alarma',
         'categoria_id' => 'alarmas',
-        'excerpt' => 'Evita falsas alarmas con una correcta selección y ubicación de detectores.',
-        'fecha' => '2024-01-01',
+        'excerpt' => 'Evita falsas alarmas con una correcta selección y ubicación de detectores de movimiento.',
+        'fecha' => '2024-01-12',
         'acceso' => 'public'
     ]
 ];

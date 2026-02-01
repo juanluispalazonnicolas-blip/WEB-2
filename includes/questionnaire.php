@@ -498,7 +498,7 @@
 </div>
 
 <!-- Trigger Button (Floating) -->
-<button id="questionnaire-trigger" onclick="openQuestionnaire()" class="fixed bottom-24 right-8 z-50 btn-gold px-6 py-4 rounded-full shadow-lg flex items-center gap-3 animate-pulse hover:animate-none">
+<button id="questionnaire-trigger" onclick="openQuestionnaire()" class="fixed bottom-44 right-8 z-50 btn-gold px-6 py-4 rounded-full shadow-lg flex items-center gap-3 animate-pulse hover:animate-none">
     <i class="fas fa-clipboard-question text-xl"></i>
     <span class="font-heading font-semibold hidden sm:inline">¿Necesitas presupuesto?</span>
 </button>

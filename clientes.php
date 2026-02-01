@@ -17,7 +17,7 @@ include 'includes/header.php';
 <section class="relative pt-32 pb-20 bg-praxis-black overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-full">
         <div class="absolute inset-0 bg-gradient-to-r from-praxis-black via-praxis-black/95 to-praxis-black/80"></div>
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80" 
+        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" 
              alt="Hogar y negocio protegido" 
              class="w-full h-full object-cover opacity-20">
     </div>
@@ -139,7 +139,7 @@ include 'includes/header.php';
                     'Recomendación honesta: contratar, negociar o buscar otra opción'
                 ],
                 'price' => 'Desde 75€',
-                'image' => 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80'
+                'image' => 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=600'
             ],
             [
                 'icon' => 'fa-magnifying-glass',
@@ -153,7 +153,7 @@ include 'includes/header.php';
                     'Informe con propuestas de mejora'
                 ],
                 'price' => 'Desde 150€',
-                'image' => 'https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80'
+                'image' => 'https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=600'
             ],
             [
                 'icon' => 'fa-drafting-compass',
@@ -167,7 +167,7 @@ include 'includes/header.php';
                     'Asesoramiento durante la instalación'
                 ],
                 'price' => 'Desde 250€',
-                'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80'
+                'image' => 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600'
             ],
             [
                 'icon' => 'fa-user-lock',
@@ -181,7 +181,7 @@ include 'includes/header.php';
                     'Servicio de DPO externo (opcional)'
                 ],
                 'price' => 'Consultar',
-                'image' => 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80'
+                'image' => 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600'
             ]
         ];
         

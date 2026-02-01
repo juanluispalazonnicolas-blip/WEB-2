@@ -4,6 +4,23 @@
  * Cabecera reutilizable con navegación y meta tags
  */
 
+// ============================================
+// FORZAR CODIFICACIÓN UTF-8 (SOLUCIÓN AGRESIVA)
+// ============================================
+// Esto corrige caracteres corruptos como "Ã©" -> "é"
+
+// Configurar codificación interna de PHP
+if (function_exists('mb_internal_encoding')) {
+    mb_internal_encoding('UTF-8');
+}
+if (function_exists('mb_http_output')) {
+    mb_http_output('UTF-8');
+}
+
+// Headers HTTP para forzar UTF-8
+header('Content-Type: text/html; charset=UTF-8');
+header('X-Content-Type-Options: nosniff');
+
 // Variables por defecto si no están definidas
 $page_title = $page_title ?? 'Praxis Seguridad | Consultoría Estratégica en Seguridad Privada';
 $page_description = $page_description ?? 'Consultoría estratégica en seguridad privada en Murcia. Auditorías, diseño de sistemas, optimización y servicios de vigilancia.';
@@ -341,7 +358,7 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 header-blur bg-praxis-black/80 border-b border-praxis-gray/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-24">
                 
                 <!-- Logo -->
                 <a href="<?php echo $base_url; ?>index.php" class="flex items-center space-x-3 group">
@@ -353,7 +370,7 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
                 </a>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8">
+                <nav class="hidden lg:flex items-center space-x-4">
                     <a href="<?php echo $base_url; ?>index.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'active' : ''; ?>">
                         Inicio
                     </a>
@@ -421,6 +438,10 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
                         Casos de Éxito
                     </a>
                     
+                    <a href="<?php echo $base_url; ?>tienda.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'tienda' ? 'active' : ''; ?>">
+                        <i class="fas fa-shopping-cart mr-1"></i>Tienda
+                    </a>
+                    
                     <a href="<?php echo $base_url; ?>faq.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'active' : ''; ?>">
                         FAQ
                     </a>
@@ -432,6 +453,17 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
                     <a href="<?php echo $base_url; ?>contacto.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'active' : ''; ?>">
                         Contacto
                     </a>
+                    
+                    <!-- Auth Links -->
+                    <div class="flex items-center gap-3 border-l border-praxis-gray/50 pl-6">
+                        <a href="<?php echo $base_url; ?>auth/login.php" class="text-sm font-medium text-praxis-gray-light hover:text-praxis-gold transition-colors">
+                            <i class="fas fa-sign-in-alt mr-1"></i>Login
+                        </a>
+                        <a href="<?php echo $base_url; ?>auth/register.php" class="px-4 py-2 border border-praxis-gold text-praxis-gold rounded-lg text-sm font-medium hover:bg-praxis-gold hover:text-praxis-black transition-all">
+                            Registrarse
+                        </a>
+                    </div>
+                    
                     <a href="<?php echo $base_url; ?>contacto.php" class="btn-gold px-6 py-3 rounded-lg text-praxis-black font-heading font-semibold text-sm uppercase tracking-wider">
                         Solicitar Consultoría
                     </a>
@@ -453,26 +485,54 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
     <!-- Mobile Menu -->
     <div class="mobile-menu fixed inset-0 z-40 lg:hidden">
         <div class="absolute inset-0 bg-praxis-black/95 header-blur"></div>
-        <div class="relative h-full flex flex-col items-center justify-center space-y-8">
-            <a href="<?php echo $base_url; ?>index.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'text-praxis-gold' : ''; ?>">
+        <div class="relative h-full flex flex-col items-center justify-center space-y-6 pt-20 overflow-y-auto">
+            <a href="<?php echo $base_url; ?>index.php" class="text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'text-praxis-gold' : ''; ?>">
                 Inicio
             </a>
-            <a href="<?php echo $base_url; ?>servicios.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'servicios' ? 'text-praxis-gold' : ''; ?>">
+            <a href="<?php echo $base_url; ?>servicios.php" class="text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'servicios' ? 'text-praxis-gold' : ''; ?>">
                 Servicios
             </a>
-            <a href="<?php echo $base_url; ?>sobre-mi.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'text-praxis-gold' : ''; ?>">
+            <a href="<?php echo $base_url; ?>sobre-mi.php" class="text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'text-praxis-gold' : ''; ?>">
                 Sobre Mí
             </a>
-            <a href="<?php echo $base_url; ?>casos-exito.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'text-praxis-gold' : ''; ?>">
+            <a href="<?php echo $base_url; ?>casos-exito.php" class="text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'text-praxis-gold' : ''; ?>">
                 Casos de Éxito
             </a>
-            <a href="<?php echo $base_url; ?>faq.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'text-praxis-gold' : ''; ?>">
+            
+            <!-- Tienda - Destacada -->
+            <a href="<?php echo $base_url; ?>tienda.php" class="flex items-center gap-2 text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'tienda' ? 'text-praxis-gold' : 'text-praxis-white'; ?>">
+                <i class="fas fa-shopping-cart text-praxis-gold"></i>
+                Tienda Kits
+            </a>
+            
+            <a href="<?php echo $base_url; ?>faq.php" class="text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'text-praxis-gold' : ''; ?>">
                 FAQ
             </a>
-            <a href="<?php echo $base_url; ?>contacto.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'text-praxis-gold' : ''; ?>">
+            
+            <!-- Centro de Conocimiento - Destacado -->
+            <a href="<?php echo $base_url; ?>conocimiento.php" class="flex items-center gap-2 text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'conocimiento' ? 'text-praxis-gold' : 'text-praxis-white'; ?>">
+                <i class="fas fa-graduation-cap text-praxis-gold"></i>
+                Centro de Conocimiento
+            </a>
+            
+            <a href="<?php echo $base_url; ?>contacto.php" class="text-xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'text-praxis-gold' : ''; ?>">
                 Contacto
             </a>
-            <a href="<?php echo $base_url; ?>contacto.php" class="btn-gold px-8 py-4 rounded-lg text-praxis-black font-heading font-semibold text-lg uppercase tracking-wider mt-8">
+            
+            <!-- Separador -->
+            <div class="w-32 h-px bg-praxis-gold/30 my-2"></div>
+            
+            <!-- Registro / Iniciar Sesión -->
+            <div class="flex items-center gap-4">
+                <a href="<?php echo $base_url; ?>auth/login.php" class="text-lg font-heading font-medium uppercase tracking-wider text-praxis-gray-light hover:text-praxis-gold transition-colors">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
+                </a>
+            </div>
+            <a href="<?php echo $base_url; ?>auth/register.php" class="px-6 py-3 border-2 border-praxis-gold text-praxis-gold font-heading font-semibold text-sm uppercase tracking-wider rounded-lg hover:bg-praxis-gold hover:text-praxis-black transition-all">
+                <i class="fas fa-user-plus mr-2"></i>Registrarse
+            </a>
+            
+            <a href="<?php echo $base_url; ?>contacto.php" class="btn-gold px-8 py-4 rounded-lg text-praxis-black font-heading font-semibold text-lg uppercase tracking-wider mt-4">
                 Solicitar Consultoría
             </a>
         </div>
