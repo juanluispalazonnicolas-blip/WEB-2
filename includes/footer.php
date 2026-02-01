@@ -146,6 +146,101 @@
     </button>
     
     <script>
+        // ========================================
+        // PAGE LOADER & ENTRANCE ANIMATIONS
+        // ========================================
+        
+        // Hide loader when page is fully loaded
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('pageLoader');
+            if (loader) {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                    
+                    // Trigger entrance animations after loader hides
+                    setTimeout(function() {
+                        triggerEntranceAnimations();
+                    }, 100);
+                }, 800); // Show loader for at least 800ms
+            } else {
+                triggerEntranceAnimations();
+            }
+        });
+        
+        // Trigger all entrance animations
+        function triggerEntranceAnimations() {
+            // Animate elements with class animate-on-load
+            const animateOnLoad = document.querySelectorAll('.animate-on-load');
+            animateOnLoad.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('animated');
+                }, index * 100);
+            });
+            
+            // Animate elements from left
+            const animateFromLeft = document.querySelectorAll('.animate-from-left');
+            animateFromLeft.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('animated');
+                }, index * 150);
+            });
+            
+            // Animate elements from right
+            const animateFromRight = document.querySelectorAll('.animate-from-right');
+            animateFromRight.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('animated');
+                }, index * 150);
+            });
+            
+            // Animate scale elements
+            const animateScale = document.querySelectorAll('.animate-scale');
+            animateScale.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('animated');
+                }, index * 100);
+            });
+            
+            // Animate text reveal
+            const textReveal = document.querySelectorAll('.text-reveal');
+            textReveal.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('animated');
+                }, 500 + (index * 200));
+            });
+        }
+        
+        // ========================================
+        // SCROLL ANIMATIONS (Intersection Observer)
+        // ========================================
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements that should animate on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollAnimateElements = document.querySelectorAll('.animate-on-scroll');
+            scrollAnimateElements.forEach(el => {
+                scrollObserver.observe(el);
+            });
+        });
+        
+        // ========================================
+        // SCROLL TO TOP & HEADER
+        // ========================================
+        
         // Scroll to top functionality
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -154,23 +249,40 @@
         // Show/hide scroll button
         window.addEventListener('scroll', function() {
             const scrollTop = document.getElementById('scrollTop');
-            if (window.scrollY > 500) {
-                scrollTop.classList.remove('opacity-0', 'invisible');
-                scrollTop.classList.add('opacity-100', 'visible');
-            } else {
-                scrollTop.classList.add('opacity-0', 'invisible');
-                scrollTop.classList.remove('opacity-100', 'visible');
+            if (scrollTop) {
+                if (window.scrollY > 500) {
+                    scrollTop.classList.remove('opacity-0', 'invisible');
+                    scrollTop.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollTop.classList.add('opacity-0', 'invisible');
+                    scrollTop.classList.remove('opacity-100', 'visible');
+                }
             }
         });
         
         // Header background on scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('bg-praxis-black/95');
-            } else {
-                header.classList.remove('bg-praxis-black/95');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-praxis-black/95');
+                } else {
+                    header.classList.remove('bg-praxis-black/95');
+                }
             }
+        });
+        
+        // ========================================
+        // PARALLAX EFFECT (optional)
+        // ========================================
+        
+        window.addEventListener('scroll', function() {
+            const parallaxElements = document.querySelectorAll('.parallax-bg');
+            parallaxElements.forEach(el => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+                el.style.transform = 'translateY(' + rate + 'px)';
+            });
         });
     </script>
 </body>

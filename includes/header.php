@@ -151,9 +151,197 @@ $current_page = $current_page ?? 'inicio';
         html {
             scroll-behavior: smooth;
         }
+        
+        /* ========================================
+           ANIMACIONES DE ENTRADA
+           ======================================== */
+        
+        /* Loader/Splash screen */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0B0E11;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-logo {
+            animation: pulse-glow 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                transform: scale(1);
+                filter: drop-shadow(0 0 10px rgba(201, 162, 77, 0.5));
+            }
+            50% { 
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 30px rgba(201, 162, 77, 0.8));
+            }
+        }
+        
+        /* Fade in up animation */
+        .animate-on-load {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-load.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Fade in from left */
+        .animate-from-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-from-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Fade in from right */
+        .animate-from-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-from-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Scale in animation */
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-scale.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Stagger delay classes */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+        .delay-600 { transition-delay: 0.6s; }
+        .delay-700 { transition-delay: 0.7s; }
+        .delay-800 { transition-delay: 0.8s; }
+        
+        /* Text reveal animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+        
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        
+        .text-reveal.animated span {
+            transform: translateY(0);
+        }
+        
+        /* Shimmer effect for buttons */
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.3) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+        
+        /* Floating animation for decorative elements */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Rotate animation */
+        .animate-slow-spin {
+            animation: slow-spin 20s linear infinite;
+        }
+        
+        @keyframes slow-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Typing cursor effect */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Background parallax effect */
+        .parallax-bg {
+            transition: transform 0.1s ease-out;
+        }
     </style>
 </head>
 <body class="bg-praxis-black text-praxis-white antialiased">
+    
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="text-center">
+            <img src="images/logo-praxis.png" alt="Praxis Seguridad" class="loader-logo h-24 md:h-32 mx-auto mb-6">
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-2 h-2 bg-praxis-gold rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                <div class="w-2 h-2 bg-praxis-gold rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-2 h-2 bg-praxis-gold rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+        </div>
+    </div>
     
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 header-blur bg-praxis-black/80 border-b border-praxis-gray/30">
