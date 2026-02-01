@@ -1,13 +1,21 @@
-<?php
+﻿<?php
 /**
  * Praxis Seguridad - Header
- * Cabecera reutilizable con navegación y meta tags
+ * Cabecera reutilizable con navegaciÃ³n y meta tags
  */
 
-// Variables por defecto si no están definidas
-$page_title = $page_title ?? 'Praxis Seguridad | Consultoría Estratégica en Seguridad Privada';
-$page_description = $page_description ?? 'Consultoría estratégica en seguridad privada en Murcia. Auditorías, diseño de sistemas, optimización y servicios de vigilancia.';
+// Variables por defecto si no estÃ¡n definidas
+$page_title = $page_title ?? 'Praxis Seguridad | ConsultorÃ­a EstratÃ©gica en Seguridad Privada';
+$page_description = $page_description ?? 'ConsultorÃ­a estratÃ©gica en seguridad privada en Murcia. AuditorÃ­as, diseÃ±o de sistemas, optimizaciÃ³n y servicios de vigilancia.';
 $current_page = $current_page ?? 'inicio';
+
+// Calcular la ruta base segÃºn el directorio actual
+// Esto permite que las pÃ¡ginas en subdirectorios encuentren los recursos
+$base_url = '';
+$current_dir = dirname($_SERVER['PHP_SELF']);
+if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/auth') !== false) {
+    $base_url = '../';
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +23,7 @@ $current_page = $current_page ?? 'inicio';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta name="keywords" content="seguridad privada, consultoría seguridad, Murcia, Santomera, auditoría seguridad, alarmas, vigilancia">
+    <meta name="keywords" content="seguridad privada, consultorÃ­a seguridad, Murcia, Santomera, auditorÃ­a seguridad, alarmas, vigilancia">
     <meta name="author" content="Praxis Seguridad">
     <meta name="robots" content="index, follow">
     
@@ -337,8 +345,8 @@ $current_page = $current_page ?? 'inicio';
             <div class="flex items-center justify-between h-20">
                 
                 <!-- Logo -->
-                <a href="index.php" class="flex items-center space-x-3 group">
-                    <img src="images/logo-praxis.png" alt="Praxis Seguridad Logo" class="h-14 w-auto drop-shadow-lg">
+                <a href="<?php echo $base_url; ?>index.php" class="flex items-center space-x-3 group">
+                    <img src="<?php echo $base_url; ?>images/logo-praxis.png" alt="Praxis Seguridad Logo" class="h-14 w-auto drop-shadow-lg">
                     <div class="flex flex-col">
                         <span class="text-xl font-heading font-bold text-praxis-white group-hover:text-praxis-gold transition-colors tracking-wide">PRAXIS</span>
                         <span class="text-sm font-heading font-semibold text-praxis-gold tracking-widest">SEGURIDAD</span>
@@ -347,58 +355,58 @@ $current_page = $current_page ?? 'inicio';
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="index.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'active' : ''; ?>">
+                    <a href="<?php echo $base_url; ?>index.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'active' : ''; ?>">
                         Inicio
                     </a>
                     
                     <!-- Servicios Dropdown -->
                     <div class="relative group">
-                        <a href="servicios.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors flex items-center gap-1 <?php echo $current_page === 'servicios' ? 'active' : ''; ?>">
+                        <a href="<?php echo $base_url; ?>servicios.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors flex items-center gap-1 <?php echo $current_page === 'servicios' ? 'active' : ''; ?>">
                             Servicios
                             <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform"></i>
                         </a>
                         <!-- Dropdown Menu -->
                         <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                             <div class="bg-praxis-black border border-praxis-gold/20 rounded-xl shadow-2xl py-2 min-w-[280px]">
-                                <a href="servicios.php#consultoria" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#consultoria" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-chess-queen text-praxis-gold w-5"></i>
-                                    <span class="text-praxis-white text-sm">Consultoría Estratégica</span>
+                                    <span class="text-praxis-white text-sm">ConsultorÃ­a EstratÃ©gica</span>
                                 </a>
-                                <a href="servicios.php#auditoria" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#auditoria" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-magnifying-glass-chart text-praxis-gold w-5"></i>
-                                    <span class="text-praxis-white text-sm">Auditoría de Riesgos</span>
+                                    <span class="text-praxis-white text-sm">AuditorÃ­a de Riesgos</span>
                                 </a>
-                                <a href="servicios.php#peritaje" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#peritaje" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-gavel text-praxis-gold w-5"></i>
                                     <span class="text-praxis-white text-sm">Peritaje Judicial</span>
                                 </a>
-                                <a href="servicios.php#sistemas" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#sistemas" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-sitemap text-praxis-gold w-5"></i>
-                                    <span class="text-praxis-white text-sm">Diseño de Sistemas</span>
+                                    <span class="text-praxis-white text-sm">DiseÃ±o de Sistemas</span>
                                 </a>
-                                <a href="servicios.php#optimizacion" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#optimizacion" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-gears text-praxis-gold w-5"></i>
-                                    <span class="text-praxis-white text-sm">Optimización</span>
+                                    <span class="text-praxis-white text-sm">OptimizaciÃ³n</span>
                                 </a>
-                                <a href="servicios.php#vigilancia" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#vigilancia" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-user-shield text-praxis-gold w-5"></i>
                                     <span class="text-praxis-white text-sm">Vigilancia y Auxiliares</span>
                                 </a>
-                                <a href="servicios.php#dpo" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#dpo" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-shield-halved text-praxis-gold w-5"></i>
-                                    <span class="text-praxis-white text-sm">Protección de Datos (DPO)</span>
+                                    <span class="text-praxis-white text-sm">ProtecciÃ³n de Datos (DPO)</span>
                                 </a>
-                                <a href="servicios.php#tecnologia" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>servicios.php#tecnologia" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-microchip text-praxis-gold w-5"></i>
-                                    <span class="text-praxis-white text-sm">Tecnología e IA</span>
+                                    <span class="text-praxis-white text-sm">TecnologÃ­a e IA</span>
                                 </a>
                                 <!-- Separador -->
                                 <div class="h-px bg-praxis-gold/20 my-2 mx-4"></div>
-                                <a href="empresas-seguridad.php" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>empresas-seguridad.php" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-building text-blue-400 w-5"></i>
                                     <span class="text-praxis-white text-sm">Para Empresas de Seguridad</span>
                                 </a>
-                                <a href="clientes.php" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                <a href="<?php echo $base_url; ?>clientes.php" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
                                     <i class="fas fa-home text-green-400 w-5"></i>
                                     <span class="text-praxis-white text-sm">Para Particulares y Empresas</span>
                                 </a>
@@ -406,27 +414,27 @@ $current_page = $current_page ?? 'inicio';
                         </div>
                     </div>
                     
-                    <a href="sobre-mi.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'active' : ''; ?>">
-                        Sobre Mí
+                    <a href="<?php echo $base_url; ?>sobre-mi.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'active' : ''; ?>">
+                        Sobre MÃ­
                     </a>
                     
-                    <a href="casos-exito.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'active' : ''; ?>">
-                        Casos de Éxito
+                    <a href="<?php echo $base_url; ?>casos-exito.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'active' : ''; ?>">
+                        Casos de Ã‰xito
                     </a>
                     
-                    <a href="faq.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'active' : ''; ?>">
+                    <a href="<?php echo $base_url; ?>faq.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'active' : ''; ?>">
                         FAQ
                     </a>
                     
-                    <a href="conocimiento.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'conocimiento' ? 'active' : ''; ?>">
+                    <a href="<?php echo $base_url; ?>conocimiento.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'conocimiento' ? 'active' : ''; ?>">
                         <i class="fas fa-graduation-cap mr-1"></i>Conocimiento
                     </a>
                     
-                    <a href="contacto.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'active' : ''; ?>">
+                    <a href="<?php echo $base_url; ?>contacto.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'active' : ''; ?>">
                         Contacto
                     </a>
-                    <a href="contacto.php" class="btn-gold px-6 py-3 rounded-lg text-praxis-black font-heading font-semibold text-sm uppercase tracking-wider">
-                        Solicitar Consultoría
+                    <a href="<?php echo $base_url; ?>contacto.php" class="btn-gold px-6 py-3 rounded-lg text-praxis-black font-heading font-semibold text-sm uppercase tracking-wider">
+                        Solicitar ConsultorÃ­a
                     </a>
                 </nav>
                 
@@ -450,23 +458,23 @@ $current_page = $current_page ?? 'inicio';
             <a href="index.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'text-praxis-gold' : ''; ?>">
                 Inicio
             </a>
-            <a href="servicios.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'servicios' ? 'text-praxis-gold' : ''; ?>">
+            <a href="<?php echo $base_url; ?>servicios.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'servicios' ? 'text-praxis-gold' : ''; ?>">
                 Servicios
             </a>
-            <a href="sobre-mi.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'text-praxis-gold' : ''; ?>">
-                Sobre Mí
+            <a href="<?php echo $base_url; ?>sobre-mi.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'text-praxis-gold' : ''; ?>">
+                Sobre MÃ­
             </a>
-            <a href="casos-exito.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'text-praxis-gold' : ''; ?>">
-                Casos de Éxito
+            <a href="<?php echo $base_url; ?>casos-exito.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'text-praxis-gold' : ''; ?>">
+                Casos de Ã‰xito
             </a>
-            <a href="faq.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'text-praxis-gold' : ''; ?>">
+            <a href="<?php echo $base_url; ?>faq.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'text-praxis-gold' : ''; ?>">
                 FAQ
             </a>
-            <a href="contacto.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'text-praxis-gold' : ''; ?>">
+            <a href="<?php echo $base_url; ?>contacto.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'text-praxis-gold' : ''; ?>">
                 Contacto
             </a>
-            <a href="contacto.php" class="btn-gold px-8 py-4 rounded-lg text-praxis-black font-heading font-semibold text-lg uppercase tracking-wider mt-8">
-                Solicitar Consultoría
+            <a href="<?php echo $base_url; ?>contacto.php" class="btn-gold px-8 py-4 rounded-lg text-praxis-black font-heading font-semibold text-lg uppercase tracking-wider mt-8">
+                Solicitar ConsultorÃ­a
             </a>
         </div>
     </div>

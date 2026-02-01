@@ -1,4 +1,4 @@
-    </main>
+﻿    </main>
     
     <!-- Footer -->
     <footer class="bg-praxis-black border-t border-praxis-gray/30 relative">
@@ -10,15 +10,15 @@
                 
                 <!-- Column 1: Logo & Description -->
                 <div class="lg:col-span-1">
-                    <a href="index.php" class="flex items-center space-x-3 group mb-6">
-                        <img src="images/logo-praxis.png" alt="Praxis Seguridad" class="h-14 w-auto">
+                    <a href="<?php echo $base_url; ?>index.php" class="flex items-center space-x-3 group mb-6">
+                        <img src="<?php echo $base_url; ?>images/logo-praxis.png" alt="Praxis Seguridad" class="h-14 w-auto">
                         <div class="flex flex-col">
                             <span class="text-lg font-heading font-bold text-praxis-white">PRAXIS</span>
                             <span class="text-sm font-heading font-semibold text-praxis-gold tracking-wide">SEGURIDAD</span>
                         </div>
                     </a>
                     <p class="text-praxis-gray-light text-sm leading-relaxed mb-6">
-                        Consultoría estratégica en seguridad privada. Pensamos, diseñamos y decidimos antes de instalar.
+                        ConsultorÃ­a estratÃ©gica en seguridad privada. Pensamos, diseÃ±amos y decidimos antes de instalar.
                     </p>
                     <!-- Social Icons -->
                     <div class="flex space-x-4">
@@ -39,19 +39,19 @@
                 
                 <!-- Column 2: Navigation -->
                 <div>
-                    <h4 class="text-praxis-white font-heading font-semibold text-sm uppercase tracking-wider mb-6">Navegación</h4>
+                    <h4 class="text-praxis-white font-heading font-semibold text-sm uppercase tracking-wider mb-6">NavegaciÃ³n</h4>
                     <ul class="space-y-4">
                         <li>
-                            <a href="index.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Inicio</a>
+                            <a href="<?php echo $base_url; ?>index.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Inicio</a>
                         </li>
                         <li>
-                            <a href="servicios.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Servicios</a>
+                            <a href="<?php echo $base_url; ?>servicios.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Servicios</a>
                         </li>
                         <li>
-                            <a href="contacto.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Contacto</a>
+                            <a href="<?php echo $base_url; ?>contacto.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Contacto</a>
                         </li>
                         <li>
-                            <a href="#" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Política de Privacidad</a>
+                            <a href="#" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">PolÃ­tica de Privacidad</a>
                         </li>
                         <li>
                             <a href="#" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Aviso Legal</a>
@@ -95,7 +95,7 @@
                             <i class="fas fa-location-dot text-praxis-gold mt-1"></i>
                             <div>
                                 <p class="text-praxis-gray-light text-sm">Santomera</p>
-                                <p class="text-praxis-gray-light text-sm">Región de Murcia, España</p>
+                                <p class="text-praxis-gray-light text-sm">RegiÃ³n de Murcia, EspaÃ±a</p>
                             </div>
                         </li>
                         <li class="flex items-center space-x-3">
@@ -124,10 +124,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                     <p class="text-praxis-gray-medium text-sm text-center md:text-left">
-                        © <?php echo date('Y'); ?> Praxis Seguridad. Todos los derechos reservados.
+                        Â© <?php echo date('Y'); ?> Praxis Seguridad. Todos los derechos reservados.
                     </p>
                     <p class="text-praxis-gray-medium text-sm">
-                        Consultoría en Seguridad Privada en Murcia
+                        ConsultorÃ­a en Seguridad Privada en Murcia
                     </p>
                 </div>
             </div>
