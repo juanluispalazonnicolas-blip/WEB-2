@@ -195,7 +195,7 @@ $current_page = $current_page ?? 'inicio';
         .animate-on-load {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 1.5s ease, transform 1.5s ease;
         }
         
         .animate-on-load.animated {
@@ -207,7 +207,7 @@ $current_page = $current_page ?? 'inicio';
         .animate-from-left {
             opacity: 0;
             transform: translateX(-60px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 1.5s ease, transform 1.5s ease;
         }
         
         .animate-from-left.animated {
@@ -219,7 +219,7 @@ $current_page = $current_page ?? 'inicio';
         .animate-from-right {
             opacity: 0;
             transform: translateX(60px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 1.5s ease, transform 1.5s ease;
         }
         
         .animate-from-right.animated {
@@ -231,7 +231,7 @@ $current_page = $current_page ?? 'inicio';
         .animate-scale {
             opacity: 0;
             transform: scale(0.8);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition: opacity 1.2s ease, transform 1.2s ease;
         }
         
         .animate-scale.animated {
@@ -239,15 +239,15 @@ $current_page = $current_page ?? 'inicio';
             transform: scale(1);
         }
         
-        /* Stagger delay classes */
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; }
-        .delay-600 { transition-delay: 0.6s; }
-        .delay-700 { transition-delay: 0.7s; }
-        .delay-800 { transition-delay: 0.8s; }
+        /* Stagger delay classes - LENTAS para entrada suave */
+        .delay-100 { transition-delay: 0.3s; }
+        .delay-200 { transition-delay: 0.6s; }
+        .delay-300 { transition-delay: 0.9s; }
+        .delay-400 { transition-delay: 1.2s; }
+        .delay-500 { transition-delay: 1.5s; }
+        .delay-600 { transition-delay: 1.8s; }
+        .delay-700 { transition-delay: 2.1s; }
+        .delay-800 { transition-delay: 2.4s; }
         
         /* Text reveal animation */
         .text-reveal {
@@ -330,18 +330,6 @@ $current_page = $current_page ?? 'inicio';
     </style>
 </head>
 <body class="bg-praxis-black text-praxis-white antialiased">
-    
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="text-center">
-            <img src="images/logo-praxis.png" alt="Praxis Seguridad" class="loader-logo h-24 md:h-32 mx-auto mb-6">
-            <div class="flex items-center justify-center gap-2">
-                <div class="w-2 h-2 bg-praxis-gold rounded-full animate-bounce" style="animation-delay: 0s;"></div>
-                <div class="w-2 h-2 bg-praxis-gold rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
-                <div class="w-2 h-2 bg-praxis-gold rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
-            </div>
-        </div>
-    </div>
     
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 header-blur bg-praxis-black/80 border-b border-praxis-gray/30">
