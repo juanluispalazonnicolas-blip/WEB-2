@@ -418,6 +418,10 @@ $current_page = $current_page ?? 'inicio';
                         FAQ
                     </a>
                     
+                    <a href="conocimiento.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'conocimiento' ? 'active' : ''; ?>">
+                        <i class="fas fa-graduation-cap mr-1"></i>Conocimiento
+                    </a>
+                    
                     <a href="contacto.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'active' : ''; ?>">
                         Contacto
                     </a>
