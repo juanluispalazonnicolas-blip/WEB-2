@@ -1929,17 +1929,17 @@ function simple_markdown($text) {
     $text = preg_replace('/\*\*(.+?)\*\*/', '<strong class="text-gray-900">$1</strong>', $text);
     
     // Lists
-    $text = preg_replace('/^- (.+)$/m', '<li class="ml-4 text-gray-800 mb-1">$1</li>', $text);
-    $text = preg_replace('/^(\d+)\. (.+)$/m', '<li class="ml-4 text-gray-800 mb-1"><span class="font-bold">$1.</span> $2</li>', $text);
+    $text = preg_replace('/^- (.+)$/m', '<li class="ml-4 text-gray-900 mb-1">$1</li>', $text);
+    $text = preg_replace('/^(\d+)\. (.+)$/m', '<li class="ml-4 text-gray-900 mb-1"><span class="font-bold">$1.</span> $2</li>', $text);
     
     // Check marks and X marks
     $text = str_replace('✅', '<span class="text-green-600">✅</span>', $text);
     $text = str_replace('❌', '<span class="text-red-600">❌</span>', $text);
     
     // Paragraphs - color más oscuro
-    $text = preg_replace('/\n\n/', '</p><p class="mb-4 text-gray-800 leading-relaxed">', $text);
+    $text = preg_replace('/\n\n/', '</p><p class="mb-4 text-gray-900 leading-relaxed">', $text);
     
-    return '<p class="mb-4 text-gray-800 leading-relaxed">' . $text . '</p>';
+    return '<p class="mb-4 text-gray-900 leading-relaxed">' . $text . '</p>';
 }
 ?>
 
