@@ -361,7 +361,7 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
             <div class="flex items-center justify-between h-24">
                 
                 <!-- Logo -->
-                <a href="<?php echo $base_url; ?>index.php" class="flex items-center space-x-3 group">
+                <a href="<?php echo $base_url; ?>index.php" class="flex items-center space-x-3 group flex-shrink-0">
                     <img src="<?php echo $base_url; ?>images/logo-praxis.png" alt="Praxis Seguridad Logo" class="h-14 w-auto drop-shadow-lg">
                     <div class="flex flex-col">
                         <span class="text-xl font-heading font-bold text-praxis-white group-hover:text-praxis-gold transition-colors tracking-wide">PRAXIS</span>
@@ -370,7 +370,7 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
                 </a>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-4">
+                <nav class="hidden lg:flex items-center space-x-3 ml-8">
                     <a href="<?php echo $base_url; ?>index.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'inicio' ? 'active' : ''; ?>">
                         Inicio
                     </a>
