@@ -25,6 +25,11 @@ include 'includes/header.php';
     
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <!-- Logo grande prominente -->
+        <div class="mb-8 animate-fade-in">
+            <img src="images/logo-praxis.png" alt="Praxis Seguridad" class="h-28 md:h-36 lg:h-44 w-auto mx-auto drop-shadow-2xl">
+        </div>
+        
         <!-- Pretitle -->
         <p class="text-praxis-gold font-heading font-medium text-sm uppercase tracking-[0.3em] mb-6 animate-fade-in">
             Consultoría Estratégica en Seguridad Privada

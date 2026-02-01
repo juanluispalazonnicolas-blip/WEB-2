@@ -10,13 +10,11 @@
                 
                 <!-- Column 1: Logo & Description -->
                 <div class="lg:col-span-1">
-                    <a href="index.php" class="flex items-center space-x-2 group mb-6">
-                        <div class="w-10 h-10 bg-gradient-to-br from-praxis-gold to-praxis-gold-dark rounded-lg flex items-center justify-center">
-                            <i class="fas fa-shield-halved text-praxis-black text-lg"></i>
-                        </div>
-                        <div>
+                    <a href="index.php" class="flex items-center space-x-3 group mb-6">
+                        <img src="images/logo-praxis.png" alt="Praxis Seguridad" class="h-14 w-auto">
+                        <div class="flex flex-col">
                             <span class="text-lg font-heading font-bold text-praxis-white">PRAXIS</span>
-                            <span class="text-lg font-heading font-bold gradient-text"> SEGURIDAD</span>
+                            <span class="text-sm font-heading font-semibold text-praxis-gold tracking-wide">SEGURIDAD</span>
                         </div>
                     </a>
                     <p class="text-praxis-gray-light text-sm leading-relaxed mb-6">

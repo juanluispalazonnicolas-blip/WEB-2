@@ -21,16 +21,23 @@ include 'includes/header.php';
     </div>
     
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-            <p class="text-praxis-gold font-heading font-medium text-sm uppercase tracking-wider mb-4">
-                Nuestros Servicios
-            </p>
-            <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-praxis-white mb-6 leading-tight">
-                Soluciones de seguridad <span class="gradient-text">con criterio</span>
-            </h1>
-            <p class="text-praxis-gray-light text-xl leading-relaxed">
-                Cada servicio está diseñado para resolver problemas reales y aportar valor medible. No vendemos productos genéricos: diseñamos soluciones específicas.
-            </p>
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+            <!-- Logo prominente -->
+            <div class="flex-shrink-0">
+                <img src="images/logo-praxis.png" alt="Praxis Seguridad" class="h-24 md:h-32 w-auto drop-shadow-2xl">
+            </div>
+            
+            <div class="max-w-3xl text-center lg:text-left">
+                <p class="text-praxis-gold font-heading font-medium text-sm uppercase tracking-wider mb-4">
+                    Nuestros Servicios
+                </p>
+                <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-praxis-white mb-6 leading-tight">
+                    Soluciones de seguridad <span class="gradient-text">con criterio</span>
+                </h1>
+                <p class="text-praxis-gray-light text-xl leading-relaxed">
+                    Cada servicio está diseñado para resolver problemas reales y aportar valor medible. No vendemos productos genéricos: diseñamos soluciones específicas.
+                </p>
+            </div>
         </div>
     </div>
     
