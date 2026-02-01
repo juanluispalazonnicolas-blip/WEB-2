@@ -216,9 +216,31 @@ $current_page = $current_page ?? 'inicio';
                                     <i class="fas fa-microchip text-praxis-gold w-5"></i>
                                     <span class="text-praxis-white text-sm">Tecnología e IA</span>
                                 </a>
+                                <!-- Separador -->
+                                <div class="h-px bg-praxis-gold/20 my-2 mx-4"></div>
+                                <a href="empresas-seguridad.php" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                    <i class="fas fa-building text-blue-400 w-5"></i>
+                                    <span class="text-praxis-white text-sm">Para Empresas de Seguridad</span>
+                                </a>
+                                <a href="clientes.php" class="flex items-center gap-3 px-4 py-3 hover:bg-praxis-gold/10 transition-colors">
+                                    <i class="fas fa-home text-green-400 w-5"></i>
+                                    <span class="text-praxis-white text-sm">Para Particulares y Empresas</span>
+                                </a>
                             </div>
                         </div>
                     </div>
+                    
+                    <a href="sobre-mi.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'active' : ''; ?>">
+                        Sobre Mí
+                    </a>
+                    
+                    <a href="casos-exito.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'active' : ''; ?>">
+                        Casos de Éxito
+                    </a>
+                    
+                    <a href="faq.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'active' : ''; ?>">
+                        FAQ
+                    </a>
                     
                     <a href="contacto.php" class="nav-link text-sm font-medium uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'active' : ''; ?>">
                         Contacto
@@ -250,6 +272,15 @@ $current_page = $current_page ?? 'inicio';
             </a>
             <a href="servicios.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'servicios' ? 'text-praxis-gold' : ''; ?>">
                 Servicios
+            </a>
+            <a href="sobre-mi.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'sobre-mi' ? 'text-praxis-gold' : ''; ?>">
+                Sobre Mí
+            </a>
+            <a href="casos-exito.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'casos-exito' ? 'text-praxis-gold' : ''; ?>">
+                Casos de Éxito
+            </a>
+            <a href="faq.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'faq' ? 'text-praxis-gold' : ''; ?>">
+                FAQ
             </a>
             <a href="contacto.php" class="text-2xl font-heading font-bold uppercase tracking-wider hover:text-praxis-gold transition-colors <?php echo $current_page === 'contacto' ? 'text-praxis-gold' : ''; ?>">
                 Contacto
