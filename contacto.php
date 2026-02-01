@@ -171,7 +171,7 @@ include 'includes/header.php';
                     Completa el formulario y te contactaremos en menos de 24 horas
                 </p>
                 
-                <form action="#" method="POST" class="space-y-6">
+                <form action="api/contacto.php" method="POST" class="space-y-6">
                     
                     <!-- Name -->
                     <div>

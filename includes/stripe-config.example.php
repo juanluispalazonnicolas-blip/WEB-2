@@ -1,28 +1,31 @@
 <?php
 /**
- * Configuración de Stripe
+ * Configuración de Stripe - EJEMPLO
  * 
- * IMPORTANTE: Cambiar las claves de test por las de producción antes de ir live
+ * INSTRUCCIONES:
+ * 1. Copia este archivo como 'stripe-config.php'
+ * 2. Reemplaza las claves de ejemplo con tus claves reales de Stripe
+ * 3. NUNCA subas stripe-config.php a GitHub (está en .gitignore)
  */
 
 // Modo de Stripe: 'test' o 'live'
 define('STRIPE_MODE', 'test');
 
 if (STRIPE_MODE === 'test') {
-    // Claves de prueba (reemplazar con tus claves reales)
-    define('STRIPE_PUBLISHABLE_KEY', 'pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXX');
-    define('STRIPE_SECRET_KEY', 'sk_test_XXXXXXXXXXXXXXXXXXXXXXXXXX');
+    // Claves de prueba (reemplazar con tus claves reales de Stripe)
+    define('STRIPE_PUBLISHABLE_KEY', 'pk_test_TU_CLAVE_AQUI');
+    define('STRIPE_SECRET_KEY', 'sk_test_TU_CLAVE_AQUI');
 } else {
     // Claves de producción
-    define('STRIPE_PUBLISHABLE_KEY', 'pk_live_XXXXXXXXXXXXXXXXXXXXXXXXXX');
-    define('STRIPE_SECRET_KEY', 'sk_live_XXXXXXXXXXXXXXXXXXXXXXXXXX');
+    define('STRIPE_PUBLISHABLE_KEY', 'pk_live_TU_CLAVE_AQUI');
+    define('STRIPE _SECRET_KEY', 'sk_live_TU_CLAVE_AQUI');
 }
 
 // URL base del sitio (cambiar en producción)
 define('SITE_URL', 'https://praxisseguridad.es');
 
 // Webhook secret (para verificar webhooks de Stripe)
-define('STRIPE_WEBHOOK_SECRET', 'whsec_XXXXXXXXXXXXXXXXXXXXXXXXXX');
+define('STRIPE_WEBHOOK_SECRET', 'whsec_TU_WEBHOOK_SECRET_AQUI');
 
 // Definición de productos con sus precios
 $PRODUCTOS = [
