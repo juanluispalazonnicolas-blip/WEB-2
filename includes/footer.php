@@ -51,10 +51,10 @@
                             <a href="<?php echo $base_url; ?>contacto.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Contacto</a>
                         </li>
                         <li>
-                            <a href="#" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Política de Privacidad</a>
+                            <a href="<?php echo $base_url; ?>politica-privacidad.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Política de Privacidad</a>
                         </li>
                         <li>
-                            <a href="#" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Aviso Legal</a>
+                            <a href="<?php echo $base_url; ?>aviso-legal.php" class="text-praxis-gray-light hover:text-praxis-gold transition-colors text-sm">Aviso Legal</a>
                         </li>
                     </ul>
                 </div>
