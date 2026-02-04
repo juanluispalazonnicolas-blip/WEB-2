@@ -4,6 +4,11 @@
  * Praxis Seguridad
  */
 
+// Cargar configuración de Resend (si existe)
+if (file_exists(__DIR__ . '/resend-config.php')) {
+    require_once __DIR__ . '/resend-config.php';
+}
+
 // =====================================================
 // CONFIGURACIÓN DE SEGURIDAD
 // =====================================================
@@ -30,9 +35,21 @@ define('AUTH_RESET_TOKEN_EXPIRE_HOURS', 2);
 // CONFIGURACIÓN DE EMAILS
 // =====================================================
 
-define('AUTH_FROM_EMAIL', 'info@praxisseguridad.es');
-define('AUTH_FROM_NAME', 'Praxis Seguridad');
-define('AUTH_REPLY_TO', 'info@praxisseguridad.es');
+// Definir constantes de email si no están definidas en resend-config.php
+if (!defined('EMAIL_FROM')) {
+    define('EMAIL_FROM', 'info@praxisseguridad.es');
+}
+if (!defined('EMAIL_FROM_NAME')) {
+    define('EMAIL_FROM_NAME', 'Praxis Seguridad');
+}
+if (!defined('EMAIL_REPLY_TO')) {
+    define('EMAIL_REPLY_TO', 'info@praxisseguridad.es');
+}
+
+// Mantener constantes antiguas para compatibilidad
+define('AUTH_FROM_EMAIL', EMAIL_FROM);
+define('AUTH_FROM_NAME', EMAIL_FROM_NAME);
+define('AUTH_REPLY_TO', EMAIL_REPLY_TO);
 
 // Asuntos
 define('AUTH_VERIFY_SUBJECT', 'Verifica tu cuenta - Praxis Seguridad');
@@ -248,26 +265,77 @@ function auth_get_user_agent() {
 }
 
 /**
- * Enviar email
+ * Enviar email usando Resend API
+ * Documentación: https://resend.com/docs/send-with-php
  */
-function auth_send_email($to, $subject, $message, $is_html = true) {
-    if (AUTH_DEBUG_MODE) {
-        error_log("Email a {$to}: {$subject}");
-        return true;
+function auth_send_email($to, $subject, $body, $is_html = false) {
+    // Verificar si Resend está configurado
+    if (!defined('RESEND_API_KEY') || empty(RESEND_API_KEY) || RESEND_API_KEY === 'your_resend_api_key_here') {
+        // Fallback a PHP mail() si Resend no está configurado (NO RECOMENDADO para producción)
+        auth_log("WARNING: Resend no configurado, usando PHP mail() - Los emails pueden ir a SPAM");
+        
+        $headers = "From: " . EMAIL_FROM_NAME . " <" . EMAIL_FROM . ">\r\n";
+        $headers .= "Reply-To: " . EMAIL_FROM . "\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+        
+        if ($is_html) {
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        }
+        
+        $success = mail($to, $subject, $body, $headers);
+        auth_log("Email enviado a {$to} vía PHP mail(): " . ($success ? 'OK' : 'FAIL'));
+        return $success;
     }
     
-    $headers = [];
-    $headers[] = 'From: ' . AUTH_FROM_NAME . ' <' . AUTH_FROM_EMAIL . '>';
-    $headers[] = 'Reply-To: ' . AUTH_REPLY_TO;
+    // Usar Resend API
+    $data = [
+        'from' => EMAIL_FROM_NAME . ' <' . EMAIL_FROM . '>',
+        'to' => [$to],
+        'subject' => $subject,
+        'html' => $is_html ? $body : '<pre>' . htmlspecialchars($body) . '</pre>',
+    ];
     
-    if ($is_html) {
-        $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+    // Si hay reply-to configurado
+    if (defined('EMAIL_REPLY_TO') && !empty(EMAIL_REPLY_TO)) {
+        $data['reply_to'] = EMAIL_REPLY_TO;
     }
     
-    return mail($to, $subject, $message, implode("\r\n", $headers));
+    $ch = curl_init('https://api.resend.com/emails');
+    
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Authorization: Bearer ' . RESEND_API_KEY,
+        'Content-Type: application/json'
+    ]);
+    
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curl_error = curl_error($ch);
+    
+    curl_close($ch);
+    
+    // Parsear respuesta
+    $result = json_decode($response, true);
+    
+    // Verificar si fue exitoso
+    $success = ($http_code >= 200 && $http_code < 300);
+    
+    // Log detallado
+    if ($success) {
+        $email_id = $result['id'] ?? 'unknown';
+        auth_log("Email enviado a {$to} vía Resend: OK (ID: {$email_id})");
+    } else {
+        $error_msg = $result['message'] ?? $curl_error ?? 'Unknown error';
+        auth_log("ERROR: Email a {$to} vía Resend FALLÓ: {$error_msg} (HTTP {$http_code})");
+    }
+    
+    return $success;
 }
-
 /**
  * Logging
  */
