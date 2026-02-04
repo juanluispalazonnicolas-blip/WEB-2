@@ -37,7 +37,7 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="description" content="<?php echo htmlspecialchars($page_description); ?>">
     <meta name="keywords" content="seguridad privada, consultoría seguridad, Murcia, Santomera, auditoría seguridad, alarmas, vigilancia">
     <meta name="author" content="Praxis Seguridad">
@@ -95,6 +95,9 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
     ?>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Mobile Fixes CSS -->
+    <link rel="stylesheet" href="<?php echo $base_url; ?>css/mobile-fixes.css">
     
     <style>
         /* Custom Styles */
