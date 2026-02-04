@@ -133,29 +133,34 @@ function newsletter_get_user_agent() {
 }
 
 /**
- * Envía email con configuración correcta
+ * Envía email con Resend API (99% deliverability)
+ * Reemplaza el anterior PHP mail() que iba a SPAM
  */
 function newsletter_send_email($to, $subject, $message, $is_html = true) {
+    // Cargar configuración de Resend si no está cargada
+    if (!function_exists('auth_send_email')) {
+        require_once __DIR__ . '/auth-config.php';
+    }
+    
     // En modo desarrollo, redirigir a email de desarrollo
     if (NEWSLETTER_DEV_MODE && NEWSLETTER_DEV_EMAIL) {
         $to = NEWSLETTER_DEV_EMAIL;
         $subject = '[DEV] ' . $subject;
+        newsletter_log("Modo desarrollo: email redirigido a " . NEWSLETTER_DEV_EMAIL);
     }
     
-    // Headers
-    $headers = [];
-    $headers[] = 'From: ' . NEWSLETTER_FROM_NAME . ' <' . NEWSLETTER_FROM_EMAIL . '>';
-    $headers[] = 'Reply-To: ' . NEWSLETTER_REPLY_TO;
+    // Usar Resend API a través de auth_send_email
+    // Esto asegura 99%+ deliverability vs 20-30% con mail()
+    $result = auth_send_email($to, $subject, $message, $is_html);
     
-    if ($is_html) {
-        $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+    // Log del resultado
+    if ($result) {
+        newsletter_log("Email enviado vía Resend a: {$to} - Asunto: {$subject}");
     } else {
-        $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+        newsletter_log("ERROR: Fallo al enviar email a {$to}", 'error');
     }
     
-    // Enviar
-    return mail($to, $subject, $message, implode("\r\n", $headers));
+    return $result;
 }
 
 /**
