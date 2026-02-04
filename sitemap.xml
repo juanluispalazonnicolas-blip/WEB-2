@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Página Principal -->
+    <url>
+        <loc>https://praxisseguridad.es/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Servicios -->
+    <url>
+        <loc>https://praxisseguridad.es/servicios.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Contacto -->
+    <url>
+        <loc>https://praxisseguridad.es/contacto.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Sobre Mí -->
+    <url>
+        <loc>https://praxisseguridad.es/sobre-mi.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Casos de Éxito -->
+    <url>
+        <loc>https://praxisseguridad.es/casos-exito.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Tienda -->
+    <url>
+        <loc>https://praxisseguridad.es/tienda.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- FAQ -->
+    <url>
+        <loc>https://praxisseguridad.es/faq.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Centro de Conocimiento -->
+    <url>
+        <loc>https://praxisseguridad.es/conocimiento.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Páginas de Localidad (SEO Local) -->
+    <url>
+        <loc>https://praxisseguridad.es/alarmas-murcia.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/alarmas-santomera.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/alarmas-cartagena.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/alarmas-lorca.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/alarmas-molina-segura.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Clientes y Empresas -->
+    <url>
+        <loc>https://praxisseguridad.es/clientes.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/empresas-seguridad.php</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>

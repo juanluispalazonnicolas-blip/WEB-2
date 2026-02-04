@@ -349,8 +349,162 @@ function updateTotal() {
     });
 }
 
-// Inicializar al cargar
-document.addEventListener('DOMContentLoaded', updateTotal);
+// ============================================
+// AUTOSAVE TO LOCALSTORAGE
+// ============================================
+function saveFormData() {
+    const formData = {
+        kit: document.querySelector('input[name="kit"]:checked')?.value,
+        soporte: document.querySelector('input[name="soporte"]:checked')?.value,
+        nombre: document.querySelector('input[name="nombre"]').value,
+        apellidos: document.querySelector('input[name="apellidos"]').value,
+        email: document.querySelector('input[name="email"]').value,
+        telefono: document.querySelector('input[name="telefono"]').value,
+        direccion: document.querySelector('input[name="direccion"]').value,
+        codigo_postal: document.querySelector('input[name="codigo_postal"]').value,
+        ciudad: document.querySelector('input[name="ciudad"]').value,
+        provincia: document.querySelector('input[name="provincia"]').value,
+        notas: document.querySelector('textarea[name="notas"]').value
+    };
+    
+    localStorage.setItem('praxis_pedido_draft', JSON.stringify(formData));
+}
+
+function loadFormData() {
+    const saved = localStorage.getItem('praxis_pedido_draft');
+    if (!saved) return;
+    
+    try {
+        const formData = JSON.parse(saved);
+        
+        // Restaurar datos
+        if (formData.nombre) document.querySelector('input[name="nombre"]').value = formData.nombre;
+        if (formData.apellidos) document.querySelector('input[name="apellidos"]').value = formData.apellidos;
+        if (formData.email) document.querySelector('input[name="email"]').value = formData.email;
+        if (formData.telefono) document.querySelector('input[name="telefono"]').value = formData.telefono;
+        if (formData.direccion) document.querySelector('input[name="direccion"]').value = formData.direccion;
+        if (formData.codigo_postal) document.querySelector('input[name="codigo_postal"]').value = formData.codigo_postal;
+        if (formData.ciudad) document.querySelector('input[name="ciudad"]').value = formData.ciudad;
+        if (formData.provincia) document.querySelector('input[name="provincia"]').value = formData.provincia;
+        if (formData.notas) document.querySelector('textarea[name="notas"]').value = formData.notas;
+        
+        // Kits y soporte
+        if (formData.kit) {
+            const kitRadio = document.querySelector(`input[name="kit"][value="${formData.kit}"]`);
+            if (kitRadio) kitRadio.checked = true;
+        }
+        if (formData.soporte) {
+            const soporteRadio = document.querySelector(`input[name="soporte"][value="${formData.soporte}"]`);
+            if (soporteRadio) soporteRadio.checked = true;
+        }
+        
+        updateTotal();
+    } catch (e) {
+        console.error('Error loading saved form data:', e);
+    }
+}
+
+// ============================================
+// REAL-TIME VALIDATION
+// ============================================
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePostalCode(code) {
+    return /^[0-9]{5}$/.test(code);
+}
+
+function validatePhone(phone) {
+    // Acepta formatos: +34XXXXXXXXX, XXXXXXXXX, XXX XXX XXX
+    return /^(\+34)?[0-9\s]{9,13}$/.test(phone.replace(/\s/g, ''));
+}
+
+function showFieldError(input, message) {
+    // Remover error previo si existe
+    const prevError = input.parentElement.querySelector('.field-error');
+    if (prevError) prevError.remove();
+    
+    // Añadir clase de error al input
+    input.classList.add('border-red-500');
+    input.classList.remove('border-praxis-gold');
+    
+    // Crear mensaje de error
+    const errorDiv = document.createElement('p');
+    errorDiv.className = 'field-error text-red-500 text-xs mt-1';
+    errorDiv.textContent = message;
+    input.parentElement.appendChild(errorDiv);
+}
+
+function clearFieldError(input) {
+    const errorDiv = input.parentElement.querySelector('.field-error');
+    if (errorDiv) errorDiv.remove();
+    
+    input.classList.remove('border-red-500');
+    input.classList.add('border-praxis-gold');
+}
+
+// Aplicar validación en tiempo real
+document.addEventListener('DOMContentLoaded', function() {
+    // Cargar datos guardados
+    loadFormData();
+    
+    // Inicializar total
+    updateTotal();
+    
+    // Escuchar cambios para autosave
+    const form = document.getElementById('order-form');
+    const inputs = form.querySelectorAll('input, textarea');
+    
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            saveFormData();
+        });
+        
+        input.addEventListener('change', () => {
+            saveFormData();
+        });
+    });
+    
+    // Validación email
+    const emailInput = document.querySelector('input[name="email"]');
+    emailInput.addEventListener('blur', function() {
+        if (this.value && !validateEmail(this.value)) {
+            showFieldError(this, 'Email no válido');
+        } else if (this.value) {
+            clearFieldError(this);
+        }
+    });
+    
+    // Validación código postal
+    const cpInput = document.querySelector('input[name="codigo_postal"]');
+    cpInput.addEventListener('blur', function() {
+        if (this.value && !validatePostalCode(this.value)) {
+            showFieldError(this, 'Código postal debe tener 5 dígitos');
+        } else if (this.value) {
+            clearFieldError(this);
+        }
+    });
+    
+    // Validación teléfono
+    const phoneInput = document.querySelector('input[name="telefono"]');
+    phoneInput.addEventListener('blur', function() {
+        if (this.value && !validatePhone(this.value)) {
+            showFieldError(this, 'Formato de teléfono no válido');
+        } else if (this.value) {
+            clearFieldError(this);
+        }
+    });
+    
+    // Limpiar localStorage al enviar exitosamente
+    form.addEventListener('submit', function() {
+        // El localStorage se limpiará solo si el submit es exitoso
+        setTimeout(() => {
+            localStorage.removeItem('praxis_pedido_draft');
+        }, 1000);
+    });
+});
 </script>
 
 <?php include 'includes/footer.php'; ?>

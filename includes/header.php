@@ -56,6 +56,11 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
+    <!-- DNS Prefetch para mejor rendimiento -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -84,6 +89,10 @@ if (strpos($current_dir, '/conocimiento') !== false || strpos($current_dir, '/au
         }
     </script>
     
+    <?php 
+    // Incluir Schema.org markup para SEO local
+    include dirname(__FILE__) . '/schema-local-business.php';
+    ?>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     

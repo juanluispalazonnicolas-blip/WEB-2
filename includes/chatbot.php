@@ -333,12 +333,40 @@ async function sendMessage(message) {
     
     showTyping();
     
-    // Simular delay de respuesta (más natural)
-    await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 500));
-    
-    hideTyping();
-    const response = findResponse(message);
-    addMessage(response, true);
+    try {
+        // Intentar obtener respuesta del API
+        const response = await fetch('/api/chatbot.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message })
+        });
+        
+        hideTyping();
+        
+        if (response.ok) {
+            const data = await response.json();
+            if (data.success && data.response) {
+                addMessage(data.response, true);
+                return;
+            }
+        }
+        
+        // Si el API falla, usar respuesta local
+        throw new Error('API response failed');
+        
+    } catch (error) {
+        // Fallback a respuestas locales
+        console.log('Using local fallback responses');
+        hideTyping();
+        
+        // Simular delay para mantener experiencia natural
+        await new Promise(resolve => setTimeout(resolve, 300 + Math.random() * 200));
+        
+        const localResponse = findResponse(message);
+        addMessage(localResponse, true);
+    }
 }
 
 function sendQuickMessage(message) {

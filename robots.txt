@@ -1,0 +1,47 @@
+# Robots.txt para Praxis Seguridad
+# Optimizado para SEO
+
+User-agent: *
+Allow: /
+
+# Bloquear directorios no públicos
+Disallow: /api/
+Disallow: /auth/
+Disallow: /includes/
+Disallow: /database/
+Disallow: /vendor/
+
+# Bloquear archivos de configuración
+Disallow: /*.sql$
+Disallow: /*.json$
+Disallow: /composer.json
+Disallow: /composer.lock
+
+# Permitir recursos necesarios
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap
+Sitemap: https://praxisseguridad.es/sitemap.xml
+
+# Crawl-delay (opcional, solo si hay problemas de carga)
+# Crawl-delay: 1
+
+# Específico para Google
+User-agent: Googlebot
+Allow: /
+
+# Específico para Bing
+User-agent: Bingbot
+Allow: /
+
+# Bloquear bots maliciosos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

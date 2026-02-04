@@ -140,8 +140,11 @@
     <!-- Chatbot Widget (replaces Telegram) -->
     <?php include dirname(__FILE__) . '/chatbot.php'; ?>
     
-    <!-- Scroll to top button -->
-    <button onclick="scrollToTop()" id="scrollTop" class="fixed bottom-8 right-8 w-12 h-12 bg-praxis-gold rounded-lg text-praxis-black flex items-center justify-center opacity-0 invisible transition-all hover:scale-110 z-50">
+    <!-- Analytics & Tracking -->
+    <?php include dirname(__FILE__) . '/analytics.php'; ?>
+    
+    <!-- Scroll to top button (positioned to not interfere with chatbot) -->
+    <button onclick="scrollToTop()" id="scrollTop" class="fixed bottom-8 right-24 w-12 h-12 bg-praxis-gold rounded-lg text-praxis-black flex items-center justify-center opacity-0 invisible transition-all hover:scale-110 z-40">
         <i class="fas fa-arrow-up"></i>
     </button>
     

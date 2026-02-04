@@ -540,12 +540,81 @@ include 'includes/header.php';
             <p class="text-praxis-gray-light mb-8 max-w-xl mx-auto">
                 Suscríbete para recibir consejos prácticos, novedades del sector y alertas sobre estafas. Sin spam, solo contenido útil.
             </p>
-            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                <input type="email" placeholder="Tu email" class="flex-1 px-6 py-4 bg-praxis-gray/30 border border-praxis-gray/50 rounded-lg text-praxis-white placeholder-praxis-gray-light focus:border-praxis-gold focus:outline-none">
-                <button type="submit" class="px-8 py-4 bg-praxis-gold text-praxis-black font-heading font-bold uppercase tracking-wider rounded-lg hover:bg-white transition-colors whitespace-nowrap">
-                    Suscribirme
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" 
+                       name="email" 
+                       id="newsletter-email" 
+                       placeholder="Tu email" 
+                       class="flex-1 px-6 py-4 bg-praxis-gray/30 border border-praxis-gray/50 rounded-lg text-praxis-white placeholder-praxis-gray-light focus:border-praxis-gold focus:outline-none" 
+                       required>
+                <button type="submit" 
+                        id="newsletter-submit" 
+                        class="px-8 py-4 bg-praxis-gold text-praxis-black font-heading font-bold uppercase tracking-wider rounded-lg hover:bg-white transition-colors whitespace-nowrap">
+                    <span class="submit-text">Suscribirme</span>
+                    <span class="loading-text hidden">
+                        <i class="fas fa-spinner fa-spin"></i> Enviando...
+                    </span>
                 </button>
             </form>
+            <div id="newsletter-message" class="mt-4 text-center hidden"></div>
+            
+            <script>
+            document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const form = this;
+                const email = document.getElementById('newsletter-email').value;
+                const submitBtn = document.getElementById('newsletter-submit');
+                const messageDiv = document.getElementById('newsletter-message');
+                
+                // UI Loading state
+                submitBtn.disabled = true;
+                submitBtn.querySelector('.submit-text').classList.add('hidden');
+                submitBtn.querySelector('.loading-text').classList.remove('hidden');
+                messageDiv.classList.add('hidden');
+                
+                try {
+                    const response = await fetch('/api/newsletter/subscribe.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ 
+                            email: email,
+                            origen: 'index'
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        messageDiv.className = 'mt-4 py-3 px-4 bg-green-500/20 border border-green-500 rounded-lg text-green-400 text-sm';
+                        messageDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i>' + data.message;
+                        form.reset();
+                    } else {
+                        messageDiv.className = 'mt-4 py-3 px-4 bg-red-500/20 border border-red-500 rounded-lg text-red-400 text-sm';
+                        messageDiv.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>' + data.message;
+                    }
+                    
+                    messageDiv.classList.remove('hidden');
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    messageDiv.className = 'mt-4 py-3 px-4 bg-red-500/20 border border-red-500 rounded-lg text-red-400 text-sm';
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Error al procesar la solicitud. Inténtalo de nuevo.';
+                    messageDiv.classList.remove('hidden');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.querySelector('.submit-text').classList.remove('hidden');
+                    submitBtn.querySelector('.loading-text').classList.add('hidden');
+                    
+                    // Auto-hide message after 10 seconds
+                    setTimeout(() => {
+                        messageDiv.classList.add('hidden');
+                    }, 10000);
+                }
+            });
+            </script>
             <p class="text-praxis-gray-medium text-xs mt-4">
                 <i class="fas fa-lock mr-1"></i> Tus datos están seguros. Puedes darte de baja cuando quieras.
             </p>
