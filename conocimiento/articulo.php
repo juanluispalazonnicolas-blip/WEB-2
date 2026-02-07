@@ -1921,25 +1921,25 @@ function simple_markdown($text) {
     
     $text = implode("\n", $result_lines);
     
-    // Headers
-    $text = preg_replace('/^### (.+)$/m', '<h3 class="font-heading font-bold text-xl text-gray-900 mt-8 mb-4">$1</h3>', $text);
-    $text = preg_replace('/^## (.+)$/m', '<h2 class="font-heading font-bold text-2xl text-gray-900 mt-10 mb-6">$1</h2>', $text);
+    // Headers - NEGRO SIEMPRE VISIBLE
+    $text = preg_replace('/^### (.+)$/m', '<h3 class="font-heading font-bold text-xl !text-gray-800 mt-8 mb-4" style="color: #1f2937 !important;">$1</h3>', $text);
+    $text = preg_replace('/^## (.+)$/m', '<h2 class="font-heading font-bold text-2xl !text-gray-800 mt-10 mb-6" style="color: #1f2937 !important;">$1</h2>', $text);
     
-    // Bold
-    $text = preg_replace('/\*\*(.+?)\*\*/', '<strong class="text-gray-900">$1</strong>', $text);
+    // Bold - NEGRO
+    $text = preg_replace('/\*\*(.+?)\*\*/', '<strong class="!text-gray-900 font-bold" style="color: #111827 !important;">$1</strong>', $text);
     
-    // Lists
-    $text = preg_replace('/^- (.+)$/m', '<li class="ml-4 text-gray-900 mb-1">$1</li>', $text);
-    $text = preg_replace('/^(\d+)\. (.+)$/m', '<li class="ml-4 text-gray-900 mb-1"><span class="font-bold">$1.</span> $2</li>', $text);
+    // Lists - NEGRO
+    $text = preg_replace('/^- (.+)$/m', '<li class="ml-4 !text-gray-800 mb-1" style="color: #1f2937 !important;">$1</li>', $text);
+    $text = preg_replace('/^(\d+)\. (.+)$/m', '<li class="ml-4 !text-gray-800 mb-1" style="color: #1f2937 !important;"><span class="font-bold">$1.</span> $2</li>', $text);
     
     // Check marks and X marks
     $text = str_replace('✅', '<span class="text-green-600">✅</span>', $text);
     $text = str_replace('❌', '<span class="text-red-600">❌</span>', $text);
     
-    // Paragraphs - color más oscuro
-    $text = preg_replace('/\n\n/', '</p><p class="mb-4 text-gray-900 leading-relaxed">', $text);
+    // Paragraphs - NEGRO OSCURO SIEMPRE
+    $text = preg_replace('/\n\n/', '</p><p class="mb-4 !text-gray-800 leading-relaxed" style="color: #1f2937 !important;">', $text);
     
-    return '<p class="mb-4 text-gray-900 leading-relaxed">' . $text . '</p>';
+    return '<p class="mb-4 !text-gray-800 leading-relaxed" style="color: #1f2937 !important;">' . $text . '</p>';
 }
 ?>
 
@@ -1979,8 +1979,10 @@ function simple_markdown($text) {
         </header>
         
         <!-- Content -->
-        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg prose prose-lg max-w-none">
-            <?php echo simple_markdown($articulo['contenido']); ?>
+        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg" style="color: #1f2937 !important;">
+            <div class="max-w-none !text-gray-800" style="color: #1f2937 !important;">
+                <?php echo simple_markdown($articulo['contenido']); ?>
+            </div>
         </div>
         
         <!-- Author Box -->
