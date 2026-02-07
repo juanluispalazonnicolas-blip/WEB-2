@@ -2,7 +2,7 @@
 $current_page = 'newsletter-unsub';
 $page_title = 'Cancelar Suscripción | Praxis Seguridad';
 $page_description = 'Darse de baja del newsletter de Praxis Seguridad';
-include 'includes/header.php';
+include '../includes/header.php';
 
 $token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : '';
 $email = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
@@ -85,7 +85,7 @@ $email = isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '';
                             <i class="fas fa-spinner fa-spin"></i> Procesando...
                         </span>
                     </button>
-                    <a href="index.php" class="flex-1 px-8 py-4 border-2 border-praxis-gold text-praxis-gold font-heading font-semibold rounded-lg hover:bg-praxis-gold hover:text-praxis-black transition-all text-center">
+                    <a href="../index.php" class="flex-1 px-8 py-4 border-2 border-praxis-gold text-praxis-gold font-heading font-semibold rounded-lg hover:bg-praxis-gold hover:text-praxis-black transition-all text-center">
                         No, mantenerme suscrito
                     </a>
                 </div>
@@ -172,4 +172,4 @@ document.getElementById('unsubscribe-form').addEventListener('submit', async fun
 });
 </script>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

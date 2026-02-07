@@ -2,7 +2,7 @@
 $current_page = 'newsletter-gracias';
 $page_title = '¡Gracias por suscribirte! | Praxis Seguridad';
 $page_description = 'Confirmación de suscripción al newsletter de Praxis Seguridad';
-include 'includes/header.php';
+include '../includes/header.php';
 
 $confirmed = isset($_GET['confirmed']) && $_GET['confirmed'] == '1';
 $duplicate = isset($_GET['duplicate']) && $_GET['duplicate'] == '1';
@@ -115,15 +115,15 @@ $duplicate = isset($_GET['duplicate']) && $_GET['duplicate'] == '1';
                 </h2>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="servicios.php" class="btn-gold px-8 py-4 rounded-xl text-praxis-black font-heading font-semibold hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
+                    <a href="../servicios.php" class="btn-gold px-8 py-4 rounded-xl text-praxis-black font-heading font-semibold hover:scale-105 transition-all inline-flex items-center justify-center gap-2">
                         <i class="fas fa-shield-halved"></i>
                         Ver Servicios
                     </a>
-                    <a href="tienda.php" class="px-8 py-4 border-2 border-praxis-gold text-praxis-gold rounded-xl font-heading font-semibold hover:bg-praxis-gold hover:text-praxis-black transition-all inline-flex items-center justify-center gap-2">
+                    <a href="../tienda.php" class="px-8 py-4 border-2 border-praxis-gold text-praxis-gold rounded-xl font-heading font-semibold hover:bg-praxis-gold hover:text-praxis-black transition-all inline-flex items-center justify-center gap-2">
                         <i class="fas fa-shopping-cart"></i>
                         Ver Alarmas
                     </a>
-                    <a href="contacto.php" class="px-8 py-4 border-2 border-praxis-gray-light text-praxis-gray-light rounded-xl font-heading font-semibold hover:border-praxis-white hover:text-praxis-white transition-all inline-flex items-center justify-center gap-2">
+                    <a href="../contacto.php" class="px-8 py-4 border-2 border-praxis-gray-light text-praxis-gray-light rounded-xl font-heading font-semibold hover:border-praxis-white hover:text-praxis-white transition-all inline-flex items-center justify-center gap-2">
                         <i class="fas fa-envelope"></i>
                         Contactar
                     </a>
@@ -147,4 +147,4 @@ $duplicate = isset($_GET['duplicate']) && $_GET['duplicate'] == '1';
     </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
