@@ -63,17 +63,15 @@ h5,
 h6,
 div,
 span {
-    /* EVITAR que las palabras se partan en medio */
+    /* Prevenir corte de palabras en medio */
     word-break: normal;
-    /* NO break-all */
+    /* Permitir que palabras largas se rompan SOLO si es absolutamente necesario */
     overflow-wrap: break-word;
-    /* Romper SOLO si no cabe */
-    hyphens: manual;
-    /* Solo guiones explícitos, NO automáticos */
-
-    /* Para español, mantener palabras enteras */
-    word-break: keep-all;
-    /* Mantener palabras enteras */
+    /* NO usar guiones automáticos (evita "ejecu-tadas", "pensa-da") */
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
 }
 
 /* ============================================
