@@ -68,37 +68,98 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Páginas de Localidad (SEO Local) -->
+    <!-- Páginas de Localidad (SEO Local) - 13 Ciudades -->
+    
+    <!-- Nivel 1: Núcleo (Base de operaciones) -->
     <url>
-        <loc>https://praxisseguridad.es/alarmas-murcia.php</loc>
+        <loc>https://praxisseguridad.es/seguridad-santomera/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-abanilla/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-fortuna/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- Nivel 2: Cinturón Metropolitano -->
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-en-murcia/</loc>
         <lastmod><?php echo date('Y-m-d'); ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
 
     <url>
-        <loc>https://praxisseguridad.es/alarmas-santomera.php</loc>
+        <loc>https://praxisseguridad.es/seguridad-molina-segura/</loc>
         <lastmod><?php echo date('Y-m-d'); ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc>https://praxisseguridad.es/alarmas-cartagena.php</loc>
+        <loc>https://praxisseguridad.es/seguridad-alcantarilla/</loc>
         <lastmod><?php echo date('Y-m-d'); ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc>https://praxisseguridad.es/alarmas-lorca.php</loc>
+        <loc>https://praxisseguridad.es/seguridad-torres-cotillas/</loc>
         <lastmod><?php echo date('Y-m-d'); ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
 
     <url>
-        <loc>https://praxisseguridad.es/alarmas-molina-segura.php</loc>
+        <loc>https://praxisseguridad.es/seguridad-orihuela/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Nivel 3: Arco Mediterráneo -->
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-alicante/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-elche/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-torrevieja/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-valencia/</loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Nivel 4: Andalucía Oriental -->
+    <url>
+        <loc>https://praxisseguridad.es/seguridad-almeria/</loc>
         <lastmod><?php echo date('Y-m-d'); ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
